@@ -1,0 +1,565 @@
+/* ===== Arbab Mustafa Inspired Theme - Purple & Pink ===== */
+
+* {
+    scroll-behavior: smooth;
+}
+
+body.dark-mode {
+    /* Primary Text Colors */
+    --text-color: #E0E0E0;         /* Light gray text */
+    --text-light: #E0E0E0;         /* Light gray */
+    --text-muted: #A0A0A0;         /* Muted gray */
+    --text-dark: #808080;          /* Dark gray */
+    
+    /* Background Colors */
+    --bg-color: #0D0D0D;           /* Very dark background */
+    --bg-light: #1A1A2E;           /* Dark purple-ish */
+    --bg-card: #16213E;            /* Card background */
+    --bg-darker: #0D0D0D;          /* Almost black */
+    
+    /* Primary Brand Colors - Purple & Pink */
+    --primary: #C77DFF;            /* Purple */
+    --primary-dark: #9D4EDD;       /* Deep Purple */
+    --primary-light: #E0AAFF;      /* Light Purple */
+    --accent: #FF006E;             /* Pink/Magenta */
+    
+    /* Border & Divider Colors */
+    --border-color: rgba(199, 125, 255, 0.2);      /* Purple border */
+    --border-light: rgba(199, 125, 255, 0.3);      /* Lighter purple border */
+    
+    /* Shadows - Modern */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+    --shadow-purple: 0 10px 40px rgba(199, 125, 255, 0.3);
+}
+
+/* ===== Navigation - Purple Theme ===== */
+body.dark-mode .navbar {
+    background: rgba(13, 13, 13, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(199, 125, 255, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .navbar.scrolled {
+    background: rgba(13, 13, 13, 0.98) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .logo a {
+    color: #E0E0E0 !important;
+    background: none;
+    -webkit-text-fill-color: #E0E0E0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+body.dark-mode .logo a:hover {
+    color: #C77DFF !important;
+    -webkit-text-fill-color: #C77DFF;
+}
+
+body.dark-mode .nav-link {
+    color: #E0E0E0 !important;
+    position: relative;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+body.dark-mode .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #C77DFF, #FF006E);
+    transition: width 0.3s ease;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #C77DFF !important;
+}
+
+body.dark-mode .nav-link:hover::after,
+body.dark-mode .nav-link.active::after {
+    width: 100%;
+}
+
+body.dark-mode .nav-link.active {
+    color: #C77DFF !important;
+}
+
+body.dark-mode .hamburger span {
+    background: #E0E0E0;
+}
+
+body.dark-mode .nav-menu {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* ===== Home Section - Purple Theme ===== */
+body.dark-mode .home-section {
+    background: #0D0D0D;
+    position: relative;
+}
+
+body.dark-mode .home-section::before {
+    display: none;
+}
+body.dark-mode .home-section::before { display: none; }
+
+@keyframes subtleGlow {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 0.6; }
+}
+
+body.dark-mode .home-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+body.dark-mode .home-section .home-content {
+    position: relative;
+}
+
+body.dark-mode .home-section .home-text h1,
+body.dark-mode .home-section .home-text .greeting {
+    color: #E0E0E0;
+}
+
+body.dark-mode .home-section .home-text .name {
+    background: linear-gradient(135deg, #C77DFF 0%, #FF006E 50%, #E0AAFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(199, 125, 255, 0.5));
+    display: inline-block !important;
+    opacity: 1 !important;
+}
+
+body.dark-mode .home-section .home-text h2,
+body.dark-mode .home-section .home-text .title {
+    color: #E0E0E0;
+}
+
+body.dark-mode .home-section .home-text .description {
+    color: #CBD5E1;
+}
+
+/* ===== Section Backgrounds - Purple Theme ===== */
+body.dark-mode .about-section,
+body.dark-mode .projects-section,
+body.dark-mode .contact-section {
+    background: #000000;
+    position: relative;
+}
+
+body.dark-mode .skills-section,
+body.dark-mode .services-section,
+body.dark-mode .experience-section {
+    background: #0A0A0A;
+    position: relative;
+}
+
+body.dark-mode .cta-section {
+    background: #000000;
+}
+
+/* No decorative overlays */
+body.dark-mode .about-section::before { display: none; }
+body.dark-mode .skills-section::before { display: none; }
+body.dark-mode .projects-section::before { display: none; }
+
+/* ===== Cards - Purple Theme ===== */
+body.dark-mode .skill-category,
+body.dark-mode .project-card,
+body.dark-mode .timeline-content,
+body.dark-mode .contact-form {
+    background: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body.dark-mode .skill-category:hover,
+body.dark-mode .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(199, 125, 255, 0.3);
+    border-color: #C77DFF;
+}
+
+/* Remove decorative card borders */
+body.dark-mode .skill-category::before,
+body.dark-mode .project-card::before,
+body.dark-mode .timeline-content::before,
+body.dark-mode .contact-form::before {
+    display: none;
+}
+
+body.dark-mode .project-card:hover::before,
+body.dark-mode .skill-category:hover::before,
+body.dark-mode .timeline-content:hover::before,
+body.dark-mode .contact-form:hover::before {
+    display: none;
+}
+
+/* ===== Stat Cards - Simple Clean Design ===== */
+body.dark-mode .stat-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.92));
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+body.dark-mode .stat-card::before {
+    display: none;
+}
+
+@keyframes borderRotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.02); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+body.dark-mode .stat-card:nth-child(1)::before {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.5), rgba(125, 211, 252, 0.4));
+}
+
+body.dark-mode .stat-card:nth-child(2)::before {
+    background: linear-gradient(135deg, rgba(125, 211, 252, 0.45), rgba(147, 197, 253, 0.35));
+}
+
+body.dark-mode .stat-card:nth-child(3)::before {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.4), rgba(96, 165, 250, 0.35));
+}
+
+body.dark-mode .stat-card:hover {
+    box-shadow: 
+        0 0 22px rgba(59, 130, 246, 0.25),
+        0 0 40px rgba(56, 189, 248, 0.18);
+    transform: translateY(-4px) scale(1.01);
+}
+
+/* Dark Mode - Forms */
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #1a202c;
+    border-color: #4a5568;
+    color: var(--text-color);
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
+    background: #2d3748;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: var(--text-light);
+}
+
+/* Dark Mode - Footer */
+body.dark-mode .footer {
+    background: #0f1419;
+}
+
+/* Dark Mode - Project Image Background */
+body.dark-mode .project-image {
+    background: #1a202c;
+}
+
+/* Dark Mode - About Info */
+body.dark-mode .about-info {
+    color: var(--text-light);
+}
+
+body.dark-mode .info-item {
+    color: var(--text-light);
+}
+
+/* Dark Mode - Impressive Blue Timeline with Enhanced Pulse */
+body.dark-mode .timeline-dot {
+    background: linear-gradient(135deg, var(--royal-blue), var(--sky-blue));
+    border-color: var(--bg-color);
+    border-width: 2px;
+    box-shadow: 
+        0 0 18px rgba(59, 130, 246, 0.35),
+        0 0 28px rgba(56, 189, 248, 0.25);
+    animation: dotPulse 3.5s ease-in-out infinite;
+}
+
+body.dark-mode .timeline-item:nth-child(2n) .timeline-dot {
+    background: linear-gradient(135deg, var(--cyan), var(--light-blue));
+    box-shadow: 
+        0 0 18px rgba(6, 182, 212, 0.35),
+        0 0 28px rgba(96, 165, 250, 0.25);
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 
+            0 0 16px rgba(59, 130, 246, 0.35),
+            0 0 24px rgba(56, 189, 248, 0.25);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.15);
+        box-shadow: 
+            0 0 26px rgba(59, 130, 246, 0.45),
+            0 0 40px rgba(56, 189, 248, 0.35);
+    }
+}
+
+/* Dark Mode - Contact Items */
+body.dark-mode .contact-item h4 {
+    color: #93C5FD;
+    font-weight: 600;
+}
+
+body.dark-mode .contact-item p {
+    color: #E0F2FE;
+    font-weight: 500;
+}
+
+/* Dark Mode - Scroll Top Button */
+body.dark-mode .scroll-top {
+    background: var(--primary-color);
+}
+
+/* ===== Colorful Theme Toggle Button ===== */
+.theme-toggle {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--bg-gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    z-index: 999;
+    animation: fadeIn 0.5s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: var(--shadow-xl);
+}
+
+.theme-toggle i {
+    transition: var(--transition);
+}
+
+body.dark-mode .theme-toggle {
+    background: linear-gradient(135deg, #1E3A8A, #2563EB);
+    box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.35),
+        0 0 12px rgba(59, 130, 246, 0.25);
+    animation: none;
+}
+
+/* removed neon glow animation for a calmer look */
+
+body.dark-mode .theme-toggle:hover {
+    transform: scale(1.08) rotate(180deg);
+    box-shadow: 
+        0 8px 22px rgba(0, 0, 0, 0.4),
+        0 0 18px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Dark Mode - Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .theme-toggle {
+        bottom: 80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Dark Mode - Smooth Transition */
+body,
+.navbar,
+.nav-link,
+.home-section,
+section,
+.skill-category,
+.project-card,
+.stat-card,
+.timeline-content,
+.contact-form,
+.form-group input,
+.form-group textarea,
+.footer {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Mode - Selection Color */
+body.dark-mode ::selection {
+    background: rgba(102, 126, 234, 0.22);
+    color: white;
+}
+
+/* Dark Mode - Impressive Blue Tag Styling */
+body.dark-mode .tag {
+    background: rgba(96, 165, 250, 0.18);
+    color: #93C5FD;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    box-shadow: 0 0 6px rgba(96, 165, 250, 0.22);
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+body.dark-mode .tag:nth-child(2n) {
+    background: rgba(125, 211, 252, 0.16);
+    color: #7DD3FC;
+    border-color: rgba(125, 211, 252, 0.35);
+    box-shadow: 0 0 6px rgba(125, 211, 252, 0.2);
+}
+
+body.dark-mode .tag:nth-child(3n) {
+    background: rgba(34, 211, 238, 0.16);
+    color: #22D3EE;
+    border-color: rgba(34, 211, 238, 0.35);
+    box-shadow: 0 0 6px rgba(34, 211, 238, 0.2);
+}
+
+body.dark-mode .tag:hover {
+    background: linear-gradient(135deg, var(--royal-blue), var(--sky-blue));
+    color: white;
+    border-color: transparent;
+    box-shadow: 
+        0 0 12px rgba(59, 130, 246, 0.35),
+        0 0 20px rgba(56, 189, 248, 0.25);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Dark Mode - Project Links */
+body.dark-mode .project-link {
+    color: #a0c4ff;
+}
+
+body.dark-mode .project-link:hover {
+    color: var(--accent-color);
+}
+
+/* ===== Typography - Purple Theme ===== */
+body.dark-mode .section-title {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 2rem;
+}
+
+body.dark-mode .section-subtitle {
+    color: #9CA3AF;
+    font-size: 1.1rem;
+}
+
+/* Skill & Card Headings */
+body.dark-mode .skill-category h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Timeline & Project Headings */
+body.dark-mode .timeline-content h3,
+body.dark-mode .project-card h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+body.dark-mode .timeline-content h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+body.dark-mode .timeline-content p {
+    color: #E0F2FE;
+    font-weight: 400;
+}
+
+/* Dark Mode - About Text */
+body.dark-mode .about-text h3 {
+    color: #E0F2FE;
+    font-weight: 600;
+}
+
+body.dark-mode .about-text p {
+    color: #E0F2FE;
+    font-weight: 400;
+}
+
+/* Dark Mode - Project Content */
+body.dark-mode .project-content h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+body.dark-mode .project-card:hover .project-content h3 {
+    color: #E5F0FF;
+}
+
+body.dark-mode .project-content p {
+    color: #E0F2FE;
+    font-weight: 400;
+}
+
+/* Dark Mode - Skill Item */
+body.dark-mode .skill-name {
+    color: var(--text-color);
+}
+
+body.dark-mode .skill-bar {
+    background: #1a202c;
+}
+
+/* Dark Mode - Contact Info Box */
+body.dark-mode .contact-info {
+    background: transparent;
+}
+
+/* Dark Mode - Empty State (for projects page) */
+body.dark-mode .empty-state h3 {
+    color: #E0F2FE;
+    font-weight: 600;
+}
+
+body.dark-mode .empty-state h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode .empty-state i {
+    color: #4a5568;
+}
+

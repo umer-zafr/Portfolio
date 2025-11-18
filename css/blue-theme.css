@@ -1,0 +1,351 @@
+/* ===================================
+   PURPLE & PINK THEME (Arbab Mustafa Inspired)
+   =================================== */
+
+/* Color Scheme:
+   Primary: #C77DFF (Purple)
+   Dark: #9D4EDD (Deep Purple)
+   Light: #E0AAFF (Light Purple)
+   Accent: #FF006E (Pink/Magenta)
+   Background: #0D0D0D (Very Dark)
+   Card Background: #16213E (Dark Purple)
+   Text: #E0E0E0 (Light Gray)
+*/
+
+/* Primary brand colors */
+body.dark-mode {
+    --primary: #C77DFF;            /* Purple */
+    --primary-dark: #9D4EDD;       /* Deep Purple */
+    --primary-light: #E0AAFF;      /* Light Purple */
+    --accent: #FF006E;             /* Pink/Magenta */
+    --background: #0D0D0D;         /* Very Dark */
+    --card-bg: #16213E;            /* Dark Purple */
+}
+
+/* Update gradient backgrounds */
+.profile-image {
+    background: linear-gradient(#0D0D0D, #0D0D0D) padding-box,
+                linear-gradient(135deg, #C77DFF, #FF006E) border-box !important;
+    box-shadow: 0 8px 30px rgba(199, 125, 255, 0.4) !important;
+}
+
+.profile-image:hover {
+    box-shadow: 0 15px 50px rgba(199, 125, 255, 0.6) !important;
+}
+
+/* Profile title typing cursor */
+.profile-title {
+    border-right: 2px solid #C77DFF !important;
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #C77DFF;
+    }
+}
+
+/* Profile location */
+.profile-location {
+    border: 1px solid rgba(199, 125, 255, 0.2) !important;
+}
+
+/* Social icons */
+.profile-socials a {
+    background: rgba(22, 33, 62, 0.8) !important;
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+    color: #E0E0E0 !important;
+}
+
+.profile-socials a::before {
+    background: linear-gradient(135deg, #C77DFF, #FF006E) !important;
+}
+
+.profile-socials a:hover {
+    box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4) !important;
+}
+
+/* Primary button */
+.profile-actions .btn-primary,
+.btn-download-cv {
+    background: linear-gradient(135deg, #C77DFF, #FF006E) !important;
+    box-shadow: 0 4px 15px rgba(199, 125, 255, 0.4) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+.profile-actions .btn-primary::before {
+    background: linear-gradient(135deg, #9D4EDD, #C9184A) !important;
+}
+
+.profile-actions .btn-primary:hover,
+.btn-download-cv:hover {
+    box-shadow: 0 8px 25px rgba(199, 125, 255, 0.6) !important;
+}
+
+/* Secondary button */
+.profile-actions .btn-secondary {
+    border: 2px solid rgba(199, 125, 255, 0.3) !important;
+    color: #E0AAFF !important;
+}
+
+.profile-actions .btn-secondary:hover {
+    background: rgba(199, 125, 255, 0.15) !important;
+    border-color: #C77DFF !important;
+}
+
+/* Sidebar and sections */
+.profile-sidebar {
+    border-right: 1px solid rgba(199, 125, 255, 0.2) !important;
+}
+
+.profile-card {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.content-section {
+    border: 2px solid rgba(199, 125, 255, 0.2) !important;
+}
+
+/* Content title underline */
+.content-title::after {
+    background: linear-gradient(90deg, #C77DFF, #FF006E) !important;
+}
+
+.content-title {
+    color: #FFFFFF !important;
+}
+
+/* About section animated border */
+.about-intro::before {
+    background: linear-gradient(90deg, #C77DFF, #FF006E, #C77DFF) !important;
+}
+
+/* Info cards */
+.info-card {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.info-card:hover {
+    border-color: rgba(199, 125, 255, 0.5) !important;
+    box-shadow: 0 12px 30px rgba(199, 125, 255, 0.3) !important;
+}
+
+.info-card::before {
+    background: linear-gradient(90deg, transparent, rgba(199, 125, 255, 0.3), transparent) !important;
+}
+
+.info-card::after {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.15), rgba(22, 33, 62, 0.5)) !important;
+}
+
+.info-icon {
+    background: linear-gradient(135deg, #C77DFF, #FF006E) !important;
+    color: #FFFFFF !important;
+}
+
+.info-card:hover .info-icon {
+    box-shadow: 0 8px 20px rgba(199, 125, 255, 0.5) !important;
+}
+
+.info-label {
+    color: #A0A0A0 !important;
+}
+
+.info-value {
+    color: #FFFFFF !important;
+}
+
+.info-card:hover .info-label {
+    color: #E0AAFF !important;
+}
+
+.info-card:hover .info-value {
+    color: #E0AAFF !important;
+}
+
+/* Services section */
+.service-card {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.service-card::before {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), rgba(22, 33, 62, 0.5)) !important;
+}
+
+.service-card::after {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.15), rgba(22, 33, 62, 0.6)) !important;
+}
+
+.service-card:hover {
+    border-color: rgba(199, 125, 255, 0.5) !important;
+    box-shadow: 0 12px 35px rgba(199, 125, 255, 0.3) !important;
+}
+
+.service-icon {
+    background: linear-gradient(135deg, #C77DFF, #9D4EDD) !important;
+    color: #FFFFFF !important;
+}
+
+.service-card:hover .service-icon {
+    box-shadow: 0 8px 25px rgba(199, 125, 255, 0.6) !important;
+}
+
+.service-title {
+    color: #FFFFFF !important;
+}
+
+.service-description {
+    color: #A0A0A0 !important;
+}
+
+/* Projects section */
+.project-card {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.project-card::before {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), rgba(22, 33, 62, 0.6)) !important;
+}
+
+.project-card:hover {
+    border-color: rgba(199, 125, 255, 0.5) !important;
+    box-shadow: 0 15px 40px rgba(199, 125, 255, 0.3) !important;
+}
+
+.project-title {
+    color: #FFFFFF !important;
+}
+
+.project-description {
+    color: #A0A0A0 !important;
+}
+
+.project-tags .tag {
+    background: rgba(199, 125, 255, 0.15) !important;
+    color: #E0AAFF !important;
+    border: 1px solid rgba(199, 125, 255, 0.3) !important;
+}
+
+.project-link {
+    background: rgba(199, 125, 255, 0.1) !important;
+    border: 1px solid rgba(199, 125, 255, 0.3) !important;
+    color: #E0AAFF !important;
+}
+
+.project-link:hover {
+    background: linear-gradient(135deg, #C77DFF, #FF006E) !important;
+    box-shadow: 0 4px 12px rgba(199, 125, 255, 0.4) !important;
+    color: #FFFFFF !important;
+}
+
+/* Skills section */
+.skill-category {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.skill-category::before {
+    background: linear-gradient(90deg, #C77DFF, #FF006E) !important;
+}
+
+.skill-category::after {
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.15), rgba(22, 33, 62, 0.7)) !important;
+}
+
+.skill-category:hover {
+    border-color: rgba(199, 125, 255, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(199, 125, 255, 0.25) !important;
+}
+
+.category-title {
+    border-bottom: 2px solid rgba(199, 125, 255, 0.3) !important;
+    color: #FFFFFF !important;
+}
+
+.skill-category:hover .category-title {
+    color: #E0AAFF !important;
+}
+
+.category-title i {
+    background: linear-gradient(135deg, #C77DFF, #9D4EDD) !important;
+    color: #FFFFFF !important;
+}
+
+.skill-category:hover .category-title i {
+    box-shadow: 0 4px 15px rgba(199, 125, 255, 0.5) !important;
+}
+
+.skill-item {
+    border: 1px solid rgba(199, 125, 255, 0.25) !important;
+}
+
+.skill-item::before {
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.4), transparent) !important;
+}
+
+.skill-item:hover {
+    border-color: rgba(199, 125, 255, 0.5) !important;
+    box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4) !important;
+    background: linear-gradient(135deg, rgba(199, 125, 255, 0.2), rgba(22, 33, 62, 0.7)) !important;
+}
+
+.skill-item i {
+    color: #E0AAFF !important;
+}
+
+.skill-item:hover i {
+    color: #C77DFF !important;
+    filter: drop-shadow(0 4px 8px rgba(199, 125, 255, 0.6)) !important;
+}
+
+.skill-name {
+    color: #FFFFFF !important;
+}
+
+/* Animated background */
+.particle.small {
+    background: rgba(199, 125, 255, 0.3) !important;
+    box-shadow: 0 0 10px rgba(199, 125, 255, 0.5) !important;
+}
+
+.particle.medium {
+    background: rgba(199, 125, 255, 0.25) !important;
+    box-shadow: 0 0 20px rgba(199, 125, 255, 0.4) !important;
+}
+
+.particle.large {
+    background: rgba(199, 125, 255, 0.2) !important;
+    box-shadow: 0 0 30px rgba(199, 125, 255, 0.35) !important;
+}
+
+.glow-orb.purple,
+.glow-orb.pink {
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.4), transparent) !important;
+}
+
+.gradient-line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(199, 125, 255, 0.3) 50%, 
+        transparent 100%) !important;
+}
+
+/* Profile name and text */
+.profile-name {
+    color: #FFFFFF !important;
+}
+
+.profile-title {
+    color: #A0A0A0 !important;
+}
+
+/* Main background */
+body {
+    background: #0D0D0D !important;
+}
+
+.home-section {
+    background: #0D0D0D !important;
+}

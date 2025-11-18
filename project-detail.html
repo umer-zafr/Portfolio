@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Umer Zafar Portfolio</title>
+    <link rel="stylesheet" href="css/modern-portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail-section {
+            padding: 120px 0 80px;
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(21, 27, 61, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: rgba(21, 27, 61, 1);
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .project-header h1 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--bg-dark);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+
+        .project-btn:hover {
+            background: #00B8D4;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+        }
+
+        .project-btn.secondary {
+            background: rgba(21, 27, 61, 0.8);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .project-btn.secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+
+        .project-content {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .project-overview {
+            background: rgba(21, 27, 61, 0.5);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+        }
+
+        .project-overview h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .project-overview p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-section {
+            margin-top: 3rem;
+        }
+
+        .features-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(10, 14, 39, 0.5);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .screenshots-section {
+            margin-top: 3rem;
+        }
+
+        .screenshots-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .screenshot-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tech-stack-section {
+            background: rgba(21, 27, 61, 0.5);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(0, 217, 255, 0.15);
+        }
+
+        .tech-stack-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(10, 14, 39, 0.5);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: var(--transition-base);
+        }
+
+        .tech-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .tech-item span {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-overview,
+            .tech-stack-section {
+                padding: 2rem;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="section-container">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+
+            <div class="project-header">
+                <div class="project-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Stripe</span>
+                </div>
+                <h1>E-Commerce Mobile App</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Completed: January 2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Client: Fashion Retail Co.</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Duration: 3 months</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="#" class="project-btn secondary">
+                        <i class="fab fa-github"></i>
+                        View Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Project Overview -->
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>
+                        A comprehensive e-commerce mobile application built with Flutter, designed to provide a seamless shopping 
+                        experience for fashion retail customers. The app features a modern, intuitive interface with smooth animations 
+                        and responsive design that works perfectly on both iOS and Android platforms.
+                    </p>
+                    <p>
+                        The application includes real-time inventory management, secure payment processing through Stripe integration, 
+                        user authentication with Firebase, and a robust admin panel for managing products, orders, and customer data.
+                    </p>
+
+                    <div class="features-section">
+                        <h3>Key Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>User Authentication</strong>
+                                    <p>Secure login with email, Google, and Apple Sign-In</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Product Catalog</strong>
+                                    <p>Browse products with filters, search, and categories</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Shopping Cart</strong>
+                                    <p>Add, remove, and manage items with real-time updates</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Payment Gateway</strong>
+                                    <p>Secure payments via Stripe with multiple payment methods</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Order Tracking</strong>
+                                    <p>Real-time order status updates and notifications</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Wishlist</strong>
+                                    <p>Save favorite items for later purchase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshots -->
+                <div class="screenshots-section">
+                    <h3>App Screenshots</h3>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=600&fit=crop" alt="App Screenshot 1">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=600&fit=crop" alt="App Screenshot 2">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=400&h=600&fit=crop" alt="App Screenshot 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="tech-stack-section">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-flutter"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-stripe"></i>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>Cloud Firestore</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code"></i>
+                            <span>Dart</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Provider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

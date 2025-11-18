@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Software Engineer & Flutter Developer">
+    <title>Umer Zafar - Flutter Developer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/modern-portfolio.css">
+    <link rel="stylesheet" href="css/animated-background.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="navbar-name">Umer Zafar</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <a href="#" class="download-cv-btn" download>
+                <i class="fas fa-download"></i>
+                <span>Download CV</span>
+            </a>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Available for freelance</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Umer Zafar</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text">Flutter Developer</span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    I craft exceptional mobile experiences that blend beautiful design with powerful functionality.
+                    Specialized in Flutter development and creating apps that users love.
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" target="_blank" class="btn-primary">
+                        <span>Let's Work Together</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn-secondary">
+                        <span>View My Work</span>
+                        <i class="fas fa-briefcase"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:umerzafar780@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="profile-circle">
+                        <img src="images/13.png" alt="Umer Zafar - Flutter Developer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
+    </section>
+        <script>
+            (function () {
+                const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReduced) return;
+                const card = document.querySelector('.cta-right .cta-card');
+                const container = document.querySelector('.cta-right');
+                const blobA = document.querySelector('.cta-blob-a');
+                const blobB = document.querySelector('.cta-blob-b');
+                if (!card || !container) return;
+                const maxTilt = 6;
+                const parallax = (e) => {
+                    const rect = container.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width;
+                    const y = (e.clientY - rect.top) / rect.height;
+                    const tiltX = (maxTilt / 2 - x * maxTilt).toFixed(2);
+                    const tiltY = (y * maxTilt - maxTilt / 2).toFixed(2);
+                    card.style.transform = `rotateX(${tiltY}deg) rotateY(${tiltX}deg) translateY(-4px)`;
+                    if (blobA) blobA.style.transform = `translate(${(x - 0.5) * 16}px, ${(y - 0.5) * 10}px)`;
+                    if (blobB) blobB.style.transform = `translate(${(0.5 - x) * 12}px, ${(0.5 - y) * 8}px)`;
+                };
+                const reset = () => {
+                    card.style.transform = '';
+                    if (blobA) blobA.style.transform = '';
+                    if (blobB) blobB.style.transform = '';
+                };
+                container.addEventListener('mousemove', parallax);
+                container.addEventListener('mouseleave', reset);
+            })();
+        </script>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate developer crafting digital experiences</p>
+            </div>
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="about-image-section">
+                        <div class="code-badge top-left">
+                            <span class="badge-number">3+</span>
+                            <span class="badge-text">Years Experience</span>
+                        </div>
+                        <div class="code-badge top-right">
+                            <span class="badge-number">20+</span>
+                            <span class="badge-text">Projects Completed</span>
+                        </div>
+                        <div class="about-image-wrapper">
+                            <div class="image-circle">
+                                <!-- Replace 'your-image.jpg' with your actual image file -->
+                                <img src="images/developer-coding.jpg" alt="Developer Coding"
+                                    onerror="this.src='https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=800&fit=crop&q=80'">
+                            </div>
+                        </div>
+                        <div class="code-badge bottom-center">
+                            <span class="badge-number">100%</span>
+                            <span class="badge-text">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <p class="about-subtitle">I'm Umer Zafar - Flutter Developer</p>
+                    <h3>Building Beautiful Mobile Apps with Clean & Scalable Code</h3>
+                    <p class="about-description">
+                        Hello! I'm a passionate <strong>Software Engineer</strong> specializing in
+                        <strong>Flutter development</strong>. I create cross-platform mobile applications
+                        that deliver exceptional user experiences on both iOS and Android. With expertise in
+                        <strong>Dart</strong>, <strong>Firebase integration</strong>, <strong>State Management</strong>
+                        (Provider, Riverpod, Bloc), and <strong>RESTful API integration</strong>, I turn complex
+                        requirements into elegant, performant solutions.
+                    </p>
+                    <p class="about-description">
+                        My development approach focuses on writing clean, maintainable code following best practices
+                        and modern architecture patterns. I'm dedicated to creating pixel-perfect UIs that match
+                        design specifications while ensuring smooth performance and excellent user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">What I Offer</span>
+                <h2 class="section-title">My Services</h2>
+                <p class="section-subtitle">Professional solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon flutter-icon">
+                        <img src="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png"
+                            alt="Flutter" />
+                    </div>
+                    <h3 class="service-title">Flutter Development</h3>
+                    <p class="service-description">Creating high-performance cross-platform mobile apps for iOS and
+                        Android.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development (MERN)</h3>
+                    <p class="service-description">Building full-stack web applications with modern development
+                        practices.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="service-title">API Integration</h3>
+                    <p class="service-description">Seamless integration with RESTful APIs, Firebase, and backend
+                        services.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Implementation</h3>
+                    <p class="service-description">Converting designs into pixel-perfect interfaces with modern
+                        principles.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="service-title">App Optimization</h3>
+                    <p class="service-description">Performance optimization and enhancing apps for better user
+                        experience.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="service-title">Database Expert (SQL)</h3>
+                    <p class="service-description">Designing and optimizing relational databases with query
+                        optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of my recent work and achievements</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="project-detail.html" target="_blank" class="project-image-link">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=350&fit=crop"
+                                alt="E-Commerce App">
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-top-row">
+                            <div class="project-tech">React | TypeScript | Tailwind</div>
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/ecommerce-app" target="_blank" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project-detail.html" target="_blank" class="project-icon" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-bottom">
+                            <h3 class="project-title">E-Commerce App</h3>
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="project-detail.html" target="_blank" class="project-image-link">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=500&h=350&fit=crop"
+                                alt="Task Manager">
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-top-row">
+                            <div class="project-tech">Flutter | Firebase | Provider</div>
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/task-manager" target="_blank" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project-detail.html" target="_blank" class="project-icon" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-bottom">
+                            <h3 class="project-title">Task Management</h3>
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="project-detail.html" target="_blank" class="project-image-link">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=500&h=350&fit=crop"
+                                alt="Fitness Tracker">
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-top-row">
+                            <div class="project-tech">React | Node.js | Express | MongoDB</div>
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/fitness-tracker" target="_blank" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project-detail.html" target="_blank" class="project-icon" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-bottom">
+                            <h3 class="project-title">Fitness Tracker</h3>
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="project-detail.html" target="_blank" class="project-image-link">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=350&fit=crop"
+                                alt="Weather App">
+                        </div>
+                    </a>
+                    <div class="project-content">
+                        <div class="project-top-row">
+                            <div class="project-tech">JavaScript | API | CSS</div>
+                            <div class="project-links">
+                                <a href="https://github.com/yourusername/weather-app" target="_blank" class="project-icon" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="project-detail.html" target="_blank" class="project-icon" title="View Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-bottom">
+                            <h3 class="project-title">Weather Forecast</h3>
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- See More Projects Card -->
+                <a href="all-projects.html" target="_blank" class="project-card see-more-project">
+                    <div class="see-more-image">
+                        <div class="see-more-bg-pattern"></div>
+                        <div class="see-more-wrapper">
+                            <div class="see-more-icon-box">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h3 class="see-more-heading">View All Projects</h3>
+                            <p class="see-more-count">15+ Complete Works</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-top-row">
+                            <div class="project-tech">Complete Portfolio</div>
+                            <div class="project-links">
+                                <div class="project-icon">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-bottom">
+                            <h3 class="project-title">Explore More</h3>
+                            <span class="project-year"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">My Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Here are the technologies and tools I work with to bring ideas to life</p>
+            </div>
+
+            <div class="skills-blocks">
+                <!-- Languages Block -->
+                <div class="skill-block">
+                    <h3 class="skill-block-title">Languages</h3>
+                    <div class="skill-block-grid">
+                        <div class="skill-item" data-name="HTML">
+                            <div class="skill-icon-box html-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-item" data-name="CSS">
+                            <div class="skill-icon-box css-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="skill-item" data-name="JavaScript">
+                            <div class="skill-icon-box js-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item" data-name="TypeScript">
+                            <div class="skill-icon-box ts-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="skill-name">TypeScript</span>
+                        </div>
+                        <div class="skill-item" data-name="Python">
+                            <div class="skill-icon-box python-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item" data-name="Dart">
+                            <div class="skill-icon-box dart-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                                    alt="Dart">
+                            </div>
+                            <span class="skill-name">Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks Block -->
+                <div class="skill-block">
+                    <h3 class="skill-block-title">Frameworks</h3>
+                    <div class="skill-block-grid">
+                        <div class="skill-item" data-name="React">
+                            <div class="skill-icon-box react-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <span class="skill-name">React</span>
+                        </div>
+                        <div class="skill-item" data-name="Node.js">
+                            <div class="skill-icon-box nodejs-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <span class="skill-name">Node.js</span>
+                        </div>
+                        <div class="skill-item" data-name="Next.js">
+                            <div class="skill-icon-box nextjs-icon">
+                                <i class="fas fa-forward"></i>
+                            </div>
+                            <span class="skill-name">Next.js</span>
+                        </div>
+                        <div class="skill-item" data-name="Flutter">
+                            <div class="skill-icon-box flutter-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                                    alt="Flutter">
+                            </div>
+                            <span class="skill-name">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Block -->
+                <div class="skill-block">
+                    <h3 class="skill-block-title">Tools</h3>
+                    <div class="skill-block-grid">
+                        <div class="skill-item" data-name="Git">
+                            <div class="skill-icon-box git-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <span class="skill-name">Git</span>
+                        </div>
+                        <div class="skill-item" data-name="Android Studio">
+                            <div class="skill-icon-box android-studio-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"
+                                    alt="Android Studio">
+                            </div>
+                            <span class="skill-name">Android Studio</span>
+                        </div>
+                        <div class="skill-item" data-name="VS Code">
+                            <div class="skill-icon-box vscode-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                    alt="VS Code">
+                            </div>
+                            <span class="skill-name">VS Code</span>
+                        </div>
+                        <div class="skill-item" data-name="Figma">
+                            <div class="skill-icon-box figma-icon">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <span class="skill-name">Figma</span>
+                        </div>
+                        <div class="skill-item" data-name="Postman">
+                            <div class="skill-icon-box postman-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <span class="skill-name">Postman</span>
+                        </div>
+                        <div class="skill-item" data-name="GitHub">
+                            <div class="skill-icon-box github-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <span class="skill-name">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases Block -->
+                <div class="skill-block">
+                    <h3 class="skill-block-title">Databases</h3>
+                    <div class="skill-block-grid">
+                        <div class="skill-item" data-name="MongoDB">
+                            <div class="skill-icon-box mongodb-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <span class="skill-name">MongoDB</span>
+                        </div>
+                        <div class="skill-item" data-name="MySQL">
+                            <div class="skill-icon-box mysql-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-item" data-name="PostgreSQL">
+                            <div class="skill-icon-box postgresql-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                        <div class="skill-item" data-name="Supabase">
+                            <div class="skill-icon-box supabase-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                                    alt="Supabase">
+                            </div>
+                            <span class="skill-name">Supabase</span>
+                        </div>
+                        <div class="skill-icon-box firebase-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <span class="skill-name">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education" class="education-experience-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">My Journey</span>
+                <h2 class="section-title">Education & Experience</h2>
+                <p class="section-subtitle">Academic background and professional journey</p>
+            </div>
+
+            <div class="edu-exp-grid">
+                <!-- Education Column -->
+                <div class="edu-exp-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="column-title">Education</h3>
+                    </div>
+
+                    <div class="edu-exp-cards">
+                        <!-- Degree -->
+                        <div class="edu-exp-card">
+                            <div class="card-header">
+                                <h4 class="card-title">Bachelor of Science in Software Engineering</h4>
+                                <span class="card-date">2023 - Present</span>
+                            </div>
+                            <p class="card-institution">University of Engineering and Technology (UET), Taxila</p>
+                            <p class="card-description">
+                                Currently pursuing my degree with a focus on software development, mobile application
+                                development,
+                                and modern programming paradigms. Maintaining excellent academic performance while
+                                actively working on real-world projects.
+                            </p>
+                        </div>
+
+                        <!-- IBM Certification -->
+                        <div class="edu-exp-card">
+                            <div class="card-header">
+                                <h4 class="card-title">Flutter & Dart Certification</h4>
+                                <span class="card-date">2025</span>
+                            </div>
+                            <p class="card-institution">IBM - Coursera</p>
+                            <p class="card-description">
+                                Completed comprehensive Flutter and Dart certification covering mobile app development,
+                                state management,
+                                and best practices for building cross-platform applications.
+                            </p>
+                            <a href="https://www.coursera.org/account/accomplishments/certificate/89KPLZ37CAN3"
+                                target="_blank" class="card-link">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                        </div>
+
+                        <!-- Dr. Angela Yu -->
+                        <div class="edu-exp-card">
+                            <div class="card-header">
+                                <h4 class="card-title">The Complete Flutter Development Bootcamp</h4>
+                                <span class="card-date">2024</span>
+                            </div>
+                            <p class="card-institution">Dr. Angela Yu - Google Flutter Team Collaboration</p>
+                            <p class="card-description">
+                                Official Flutter bootcamp developed with Google's Flutter team, covering comprehensive
+                                mobile app development
+                                from basics to advanced concepts including state management, Firebase, and APIs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Column -->
+                <div class="edu-exp-column">
+                    <div class="column-header">
+                        <div class="column-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="column-title">Experience</h3>
+                    </div>
+
+                    <div class="edu-exp-cards">
+                        <!-- Freelancing -->
+                        <div class="edu-exp-card">
+                            <div class="card-header">
+                                <h4 class="card-title">Freelance Flutter Developer</h4>
+                                <span class="card-date">Aug 2025 - Present</span>
+                            </div>
+                            <p class="card-institution">Fiverr</p>
+                            <p class="card-description">
+                                Providing professional Flutter development services to clients worldwide. Specializing
+                                in cross-platform mobile applications,
+                                UI/UX implementation, and custom app solutions for various business needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="contact-cta-section">
+        <div class="cta-decor">
+            <div class="cta-blob cta-blob-a"></div>
+            <div class="cta-blob cta-blob-b"></div>
+            <div class="cta-grid-pattern"></div>
+        </div>
+        <div class="contact-wrap">
+            <header class="contact-header">
+                <span class="section-badge">Let's Connect</span>
+                <h2 class="contact-title">Let's work <span class="accent">together</span></h2>
+                <p class="contact-desc">Feel free to reach out if you want to collaborate with me, or simply have a chat.</p>
+            </header>
+            <div class="contact-cards">
+                <a class="info-card" href="mailto:youremail@example.com">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p class="info-detail">youremail@example.com</p>
+                    </div>
+                    <i class="fas fa-arrow-right info-arrow"></i>
+                </a>
+                <a class="info-card" href="tel:+0000000000">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p class="info-detail">0300 0000000</p>
+                    </div>
+                    <i class="fas fa-arrow-right info-arrow"></i>
+                </a>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p class="info-detail">Your City, Country</p>
+                    </div>
+                </div>
+            </div>
+            <div class="connect-header">
+                <h3>Connect with me</h3>
+            </div>
+            <div class="connect-row">
+                <a class="connect-btn linkedin" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a class="connect-btn email" href="mailto:youremail@example.com"><i class="fas fa-envelope"></i> Email</a>
+                <a class="connect-btn github" href="https://github.com/yourusername" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <section class="availability-card" aria-label="Availability and CV">
+                <div class="availability-left">
+                    <span class="status-badge"><i class="fas fa-circle"></i> Available for work</span>
+                    <h3 class="availability-title">Open for freelance projects</h3>
+                    <p class="availability-copy">I'm currently taking on new clients. Expect clean, modern UI, solid performance, and clear communication from kickoff to delivery.</p>
+                    <div class="availability-actions">
+                        <a class="btn-primary-lg" href="files/Resume.pdf" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download CV</span>
+                        </a>
+                        <a class="btn-ghost-lg" href="mailto:youremail@example.com">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Start a Project</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="availability-right">
+                    <ul class="availability-points">
+                        <li><i class="fas fa-check"></i> Remote-friendly, flexible hours</li>
+                        <li><i class="fas fa-bolt"></i> Avg. response within 24 hours</li>
+                        <li><i class="fas fa-globe"></i> Collaborating worldwide</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>Built with passion by Umer Zafar © 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/animated-background.js"></script>
+    <script src="js/modern-portfolio.js"></script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+

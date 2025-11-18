@@ -1,0 +1,169 @@
+/* ===== Purple & Pink Theme - Arbab Mustafa Style ===== */
+
+/* Remove all particle effects */
+body.dark-mode .home-section::after { display: none; }
+
+/* Gradient Buttons - Purple & Pink */
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, #C77DFF, #FF006E);
+    color: #FFFFFF;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(199, 125, 255, 0.5);
+}
+
+body.dark-mode .btn-primary:hover {
+    background: linear-gradient(135deg, #9D4EDD, #C9184A);
+    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.6);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(199, 125, 255, 0.4);
+    color: #E0E0E0;
+    box-shadow: none;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: rgba(199, 125, 255, 0.15);
+    border-color: #C77DFF;
+    color: #C77DFF;
+}
+
+/* Social Links - Purple Design */
+body.dark-mode .social-link {
+    background: #16213E;
+    border: 1px solid rgba(199, 125, 255, 0.3);
+    color: #E0AAFF;
+    box-shadow: none;
+}
+
+body.dark-mode .social-link:hover {
+    background: rgba(199, 125, 255, 0.2);
+    border-color: #C77DFF;
+    color: #C77DFF;
+    transform: translateY(-3px);
+}
+
+body.dark-mode .social-link:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 22px rgba(199, 125, 255, 0.4);
+}
+
+/* Profile Image Border Glow - Purple & Pink */
+body.dark-mode .image-wrapper {
+    border: 2px solid transparent;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .image-wrapper::before {
+    background: linear-gradient(135deg, #C77DFF, #FF006E, #E0AAFF, #C77DFF);
+    animation: imageRotate 8s linear infinite;
+}
+
+@keyframes imageRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Skill Progress Bar Purple & Pink */
+body.dark-mode .skill-progress {
+    background: linear-gradient(90deg, #C77DFF, #FF006E);
+    box-shadow: 0 2px 10px rgba(199, 125, 255, 0.4);
+}
+
+body.dark-mode .skill-category:nth-child(2) .skill-progress {
+    background: linear-gradient(90deg, #E0AAFF, #C77DFF, #FF006E);
+}
+
+body.dark-mode .skill-category:nth-child(3) .skill-progress {
+    background: linear-gradient(90deg, #9D4EDD, #C77DFF, #E0AAFF);
+}
+
+/* Skill Progress Bars - Purple Gradient */
+body.dark-mode .skill-progress {
+    background: linear-gradient(90deg, #C77DFF, #9D4EDD);
+}
+
+/* Contact Icons - Purple */
+body.dark-mode .contact-card i,
+body.dark-mode .contact-item i {
+    background: rgba(199, 125, 255, 0.2);
+    color: #C77DFF;
+    box-shadow: none;
+}
+
+body.dark-mode .contact-card:hover i,
+body.dark-mode .contact-item:hover i {
+    transform: scale(1.05);
+}
+
+/* Scroll Top Button - Purple & Pink */
+body.dark-mode .scroll-top {
+    background: linear-gradient(135deg, #C77DFF, #FF006E);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(199, 125, 255, 0.5);
+}
+
+body.dark-mode .scroll-top:hover {
+    background: linear-gradient(135deg, #9D4EDD, #C9184A);
+    box-shadow: 0 6px 20px rgba(255, 0, 110, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Footer - Dark Purple */
+body.dark-mode footer,
+body.dark-mode .footer {
+    background: #0D0D0D;
+    border-top: 1px solid rgba(199, 125, 255, 0.2);
+    box-shadow: none;
+}
+
+body.dark-mode .footer .social-link {
+    background: #16213E;
+    border: 1px solid rgba(199, 125, 255, 0.3);
+}
+
+body.dark-mode .footer .social-link:hover {
+    background: rgba(199, 125, 255, 0.2);
+    border-color: #C77DFF;
+    color: #C77DFF;
+}
+
+/* Form Focus - Purple Border */
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: rgba(199, 125, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.2);
+}
+
+/* Section Container Glow Effect */
+body.dark-mode section .container {
+    position: relative;
+    z-index: 2;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #C77DFF;
+    box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.15);
+}
+
+/* Section Title - No Underline Effects */
+body.dark-mode .section-title::after {
+    display: none;
+}
+
+/* Project Image Overlay - Purple Tint */
+body.dark-mode .project-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(199, 125, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+body.dark-mode .project-card:hover .project-image::after {
+    opacity: 1;
+}

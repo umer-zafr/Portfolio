@@ -1,0 +1,225 @@
+/* ===== Projects Page Specific Styles ===== */
+
+.projects-header {
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: center;
+    color: white;
+}
+
+/* Dark Mode - Colorful Projects Header */
+body.dark-mode .projects-header {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode .projects-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 0, 255, 0.2) 0%, transparent 50%);
+    z-index: 0;
+    animation: headerGlow 5s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+body.dark-mode .projects-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-mode .projects-header h1 {
+    text-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.5),
+        0 0 40px rgba(185, 103, 255, 0.3);
+}
+
+.projects-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.projects-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ===== Filter Section ===== */
+.projects-filter {
+    padding: 30px 0;
+    background: var(--bg-light);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+/* Dark Mode - Filter Section */
+body.dark-mode .projects-filter {
+    background: #1a202c;
+    border-bottom: 1px solid #4a5568;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--bg-gradient);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Dark Mode - Filter Buttons */
+body.dark-mode .filter-btn {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: var(--text-color);
+}
+
+body.dark-mode .filter-btn:hover {
+    border-color: var(--primary-color);
+    color: #a0c4ff;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+body.dark-mode .filter-btn.active {
+    background: var(--bg-gradient);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* ===== All Projects Section ===== */
+.all-projects-section {
+    padding: 60px 0 80px;
+    min-height: 50vh;
+}
+
+.all-projects-section .projects-grid {
+    margin-top: 0;
+}
+
+/* ===== Project Card Animations ===== */
+.project-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+.project-card.hide {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: var(--border-color);
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* ===== Loading State ===== */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== Responsive Styles for Projects Page ===== */
+@media screen and (max-width: 768px) {
+    .projects-header {
+        padding: 100px 0 40px;
+    }
+
+    .projects-header h1 {
+        font-size: 2rem;
+    }
+
+    .projects-header p {
+        font-size: 1rem;
+    }
+
+    .filter-buttons {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .projects-filter {
+        top: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .filter-btn {
+        padding: 7px 15px;
+        font-size: 0.85rem;
+    }
+}
