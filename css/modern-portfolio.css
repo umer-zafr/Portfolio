@@ -201,7 +201,7 @@ a {
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
@@ -246,10 +246,15 @@ a {
     width: 100%;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .nav-links {
     display: flex;
     gap: 2.5rem;
-    margin-left: auto;
 }
 
 .nav-link {
