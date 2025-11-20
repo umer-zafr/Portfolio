@@ -761,14 +761,14 @@
 
     <!-- Scroll Reveal Animation Script -->
     <script>
-        // Scroll reveal animation
+        // Scroll reveal animation with immediate trigger
         function reveal() {
             const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
             
             reveals.forEach(element => {
                 const windowHeight = window.innerHeight;
                 const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
+                const elementVisible = 100;
                 
                 if (elementTop < windowHeight - elementVisible) {
                     element.classList.add('active');
@@ -776,16 +776,23 @@
             });
         }
 
-        // Initial reveal on page load
-        window.addEventListener('load', () => {
-            reveal();
+        // Trigger animations immediately when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure smooth animation start
+            setTimeout(() => {
+                reveal();
+            }, 100);
         });
 
         // Reveal on scroll
-        window.addEventListener('scroll', reveal);
+        window.addEventListener('scroll', () => {
+            reveal();
+        });
 
-        // Trigger initial reveal
-        reveal();
+        // Also trigger on page load
+        window.addEventListener('load', () => {
+            reveal();
+        });
     </script>
 </body>
 
