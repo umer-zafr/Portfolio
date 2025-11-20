@@ -53,22 +53,22 @@
     <section id="home" class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">
+                <div class="hero-badge reveal-left">
                     <i class="fas fa-code"></i>
                     <span>Available for freelance</span>
                 </div>
-                <h1 class="hero-title">
+                <h1 class="hero-title reveal-left">
                     Hi, I'm <span class="gradient-text">Umer Zafar</span>
                 </h1>
-                <h2 class="hero-subtitle">
+                <h2 class="hero-subtitle reveal-left">
                     <span class="typing-text">Flutter Developer</span>
                     <span class="cursor">|</span>
                 </h2>
-                <p class="hero-description">
+                <p class="hero-description reveal-left">
                     I craft exceptional mobile experiences that blend beautiful design with powerful functionality.
                     Specialized in Flutter development and creating apps that users love.
                 </p>
-                <div class="hero-buttons">
+                <div class="hero-buttons reveal-left">
                     <a href="#contact" class="btn-primary">
                         <span>Let's Work Together</span>
                         <i class="fas fa-arrow-right"></i>
@@ -78,7 +78,7 @@
                         <i class="fas fa-briefcase"></i>
                     </a>
                 </div>
-                <div class="hero-social">
+                <div class="hero-social reveal-left">
                     <a href="https://github.com/umer-zafr" target="_blank" rel="noopener" class="social-link" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
@@ -90,7 +90,7 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image reveal-right">
                 <div class="image-wrapper">
                     <div class="profile-circle">
                         <img src="images/13.png" alt="Umer Zafar - Flutter Developer">
@@ -136,7 +136,7 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Passionate developer crafting digital experiences</p>
             </div>
@@ -189,7 +189,7 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">My Services</h2>
                 <p class="section-subtitle">Professional solutions tailored to your needs</p>
             </div>
@@ -255,14 +255,14 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">Skills & Technologies</h2>
                 <p class="section-subtitle">Here are the technologies and tools I work with to bring ideas to life</p>
             </div>
 
             <div class="skills-blocks">
                 <!-- Languages Block -->
-                <div class="skill-block">
+                <div class="skill-block reveal">
                     <h3 class="skill-block-title">Languages</h3>
                     <div class="skill-block-grid">
                         <div class="skill-item" data-name="HTML">
@@ -307,7 +307,7 @@
                 </div>
 
                 <!-- Frameworks Block -->
-                <div class="skill-block">
+                <div class="skill-block reveal">
                     <h3 class="skill-block-title">Frameworks</h3>
                     <div class="skill-block-grid">
                         <div class="skill-item" data-name="React">
@@ -345,7 +345,7 @@
                 </div>
 
                 <!-- Tools Block -->
-                <div class="skill-block">
+                <div class="skill-block reveal">
                     <h3 class="skill-block-title">Tools</h3>
                     <div class="skill-block-grid">
                         <div class="skill-item" data-name="Git">
@@ -390,7 +390,7 @@
                 </div>
 
                 <!-- Databases Block -->
-                <div class="skill-block">
+                <div class="skill-block reveal">
                     <h3 class="skill-block-title">Databases</h3>
                     <div class="skill-block-grid">
                         <div class="skill-item" data-name="MongoDB">
@@ -423,7 +423,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">A showcase of my recent work and achievements</p>
             </div>
@@ -570,7 +570,7 @@
     <!-- Education & Experience Section -->
     <section id="education" class="education-experience-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2 class="section-title">Education & Experience</h2>
                 <p class="section-subtitle">Academic background and professional journey</p>
             </div>
@@ -758,6 +758,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Initial reveal on page load
+        window.addEventListener('load', () => {
+            reveal();
+        });
+
+        // Reveal on scroll
+        window.addEventListener('scroll', reveal);
+
+        // Trigger initial reveal
+        reveal();
+    </script>
 </body>
 
 </html>
