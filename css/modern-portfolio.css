@@ -204,24 +204,7 @@
     color: #00D9FF;
 }
 
-.connect-header {
-    .navbar-name {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #00D9FF, #6FEFFF, #00D9FF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        background-size: 200% auto;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        position: relative;
-        animation: shimmer 3s linear infinite;
-        flex-shrink: 0;
-    }
-
-    .connect-btn {
+.connect-btn {
         display: inline-flex;
         align-items: center;
         gap: .5rem;
@@ -249,54 +232,54 @@
         color: #00D9FF;
     }
 
-    .connect-btn.github i {
-        color: #00D9FF;
+.connect-btn.github i {
+    color: #00D9FF;
+}
+
+@media (max-width: 1024px) {
+    .availability-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    @media (max-width: 1024px) {
-        .availability-card {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+}
 
-        .contact-cards {
-            grid-template-columns: 1fr;
-        }
+@media (max-width: 640px) {
+    .contact-title {
+        font-size: 2.4rem;
+        letter-spacing: -1px;
     }
 
-    @media (max-width: 640px) {
-        .contact-title {
-            font-size: 2.4rem;
-            letter-spacing: -1px;
-        }
-
-        .availability-actions .btn-primary-lg,
-        .availability-actions .btn-ghost-lg {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .connect-row .connect-btn {
-            width: 100%;
-            justify-content: center;
-        }
+    .availability-actions .btn-primary-lg,
+    .availability-actions .btn-ghost-lg {
+        width: 100%;
+        justify-content: center;
     }
 
-    /* ===================================
+    .connect-row .connect-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===================================
    MODERN PORTFOLIO - COMPLETE REDESIGN
    Purple & Pink Theme
    =================================== */
 
-    /* Reset & Base Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    :root {
-        /* Modern Unique Color Scheme - Cyan & Coral with Pure Black */
-        --primary: #00D9FF;
+:root {
+    /* Modern Unique Color Scheme - Cyan & Coral with Pure Black */
+    --primary: #00D9FF;
         /* Electric Cyan */
         --primary-dark: #00B8D4;
         /* Deep Cyan */
