@@ -219,7 +219,7 @@ a {
     position: relative;
     animation: shimmer 3s linear infinite;
     flex-shrink: 0;
-    margin-right: 650px;
+    margin-right: 550px;
 }
 
 @keyframes shimmer {
