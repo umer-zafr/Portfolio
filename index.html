@@ -796,31 +796,51 @@
             reveal();
         });
 
-        // Rotating text animation
-        const titles = ['Flutter Developer', 'Software Engineer', 'MERN Stack Developer'];
-        let currentIndex = 0;
+        // Typing animation
+        const titles = ['Flutter Developer', 'MERN Stack Developer', 'Software Engineer'];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
         const rotatingTextElement = document.querySelector('.rotating-text');
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenWords = 1500;
 
-        function rotateText() {
-            if (rotatingTextElement) {
-                rotatingTextElement.style.opacity = '0';
-                
-                setTimeout(() => {
-                    currentIndex = (currentIndex + 1) % titles.length;
-                    rotatingTextElement.textContent = titles[currentIndex];
-                    rotatingTextElement.style.opacity = '1';
-                }, 500);
+        function type() {
+            if (!rotatingTextElement) return;
+
+            const currentTitle = titles[titleIndex];
+
+            if (isDeleting) {
+                // Remove character
+                rotatingTextElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    titleIndex = (titleIndex + 1) % titles.length;
+                    setTimeout(type, 500);
+                    return;
+                }
+            } else {
+                // Add character
+                rotatingTextElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentTitle.length) {
+                    isDeleting = true;
+                    setTimeout(type, delayBetweenWords);
+                    return;
+                }
             }
+
+            setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
         }
 
-        // Set initial text
+        // Start typing animation
         if (rotatingTextElement) {
-            rotatingTextElement.textContent = titles[0];
-            rotatingTextElement.style.transition = 'opacity 0.5s ease';
+            setTimeout(type, 500);
         }
-
-        // Rotate every 2 seconds
-        setInterval(rotateText, 2000);
     </script>
 </body>
 
