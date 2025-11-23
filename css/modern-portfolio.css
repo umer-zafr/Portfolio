@@ -460,6 +460,7 @@
         animation: shimmer 3s linear infinite;
         flex-shrink: 0;
         margin-left: 26px;
+        margin-right: 500px;
     }
 
     @keyframes shimmer {
