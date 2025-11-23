@@ -176,7 +176,7 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -188,7 +188,7 @@ a {
 }
 
 .navbar.scrolled {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     background: rgba(0, 0, 0, 0.98);
     box-shadow: 
         0 4px 30px rgba(0, 0, 0, 0.7),
@@ -219,7 +219,7 @@ a {
     position: relative;
     animation: shimmer 3s linear infinite;
     flex-shrink: 0;
-    margin-right: 600px;
+    margin-right: 650px;
 }
 
 @keyframes shimmer {
