@@ -159,6 +159,10 @@
 
         .screenshots-section {
             margin-top: 3rem;
+            background: rgba(21, 27, 61, 0.5);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(0, 217, 255, 0.15);
         }
 
         .screenshots-section h3 {
@@ -170,24 +174,34 @@
 
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             justify-content: center;
         }
 
         .screenshot-item {
+            position: relative;
             border-radius: var(--radius-lg);
             overflow: hidden;
-            border: 2px solid rgba(0, 217, 255, 0.2);
+            background: rgba(10, 14, 39, 0.8);
             transition: var(--transition-base);
             cursor: pointer;
-            max-height: 600px;
+        }
+
+        .screenshot-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff6b6b 33%, #ffd93d 33%, #ffd93d 66%, #6bcf7f 66%, #6bcf7f 100%);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         }
 
         .screenshot-item:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 217, 255, 0.3);
         }
 
         .screenshot-item img {
@@ -195,6 +209,26 @@
             height: auto;
             object-fit: contain;
             display: block;
+            padding: 40px 20px 20px;
+            background: #000;
+        }
+
+        .screenshot-label {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        @media (max-width: 968px) {
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
         }
 
         .tech-stack-section {
@@ -202,18 +236,22 @@
             padding: 3rem;
             border-radius: var(--radius-xl);
             border: 1px solid rgba(0, 217, 255, 0.15);
+            margin-top: 3rem;
         }
 
         .tech-stack-section h3 {
             color: var(--text-primary);
             margin-bottom: 2rem;
             font-size: 1.8rem;
+            text-align: center;
         }
 
         .tech-stack-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .tech-item {
@@ -221,8 +259,8 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(10, 14, 39, 0.5);
+            padding: 2rem 1rem;
+            background: rgba(10, 14, 39, 0.8);
             border-radius: var(--radius-md);
             border: 1px solid rgba(0, 217, 255, 0.1);
             transition: var(--transition-base);
@@ -231,16 +269,18 @@
         .tech-item:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
         }
 
         .tech-item i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
         }
 
         .tech-item span {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
@@ -249,6 +289,20 @@
             }
 
             .project-overview,
+            .tech-stack-section,
+            .screenshots-section {
+                padding: 2rem;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }            .project-overview,
             .tech-stack-section {
                 padding: 2rem;
             }
@@ -351,13 +405,16 @@
                     <h3>App Screenshots</h3>
                     <div class="screenshots-grid">
                         <div class="screenshot-item">
-                            <img src="images/voice-screen1.png" alt="Voice Translator Screenshot 1">
+                            <span class="screenshot-label">Text Translation</span>
+                            <img src="images/voice-screen1.png" alt="Text Translation">
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/voice-screen2.png" alt="Voice Translator Screenshot 2">
+                            <span class="screenshot-label">Choose Language</span>
+                            <img src="images/voice-screen2.png" alt="Choose Language">
                         </div>
                         <div class="screenshot-item">
-                            <img src="images/voice-screen3.png" alt="Voice Translator Screenshot 3">
+                            <span class="screenshot-label">Text Translation</span>
+                            <img src="images/voice-screen3.png" alt="Text Translation">
                         </div>
                     </div>
                 </div>
