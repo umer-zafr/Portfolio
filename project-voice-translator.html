@@ -173,10 +173,11 @@
         }
 
         .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
             gap: 2rem;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .screenshot-item {
@@ -186,6 +187,8 @@
             background: rgba(10, 14, 39, 0.8);
             transition: var(--transition-base);
             cursor: pointer;
+            width: 220px;
+            flex-shrink: 0;
         }
 
         .screenshot-item::before {
@@ -194,7 +197,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 30px;
+            height: 25px;
             background: linear-gradient(135deg, #ff6b6b 0%, #ff6b6b 33%, #ffd93d 33%, #ffd93d 66%, #6bcf7f 66%, #6bcf7f 100%);
             border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         }
@@ -209,25 +212,29 @@
             height: auto;
             object-fit: contain;
             display: block;
-            padding: 40px 20px 20px;
+            padding: 35px 15px 15px;
             background: #000;
         }
 
         .screenshot-label {
             position: absolute;
-            top: 5px;
+            top: 4px;
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
             z-index: 1;
         }
 
         @media (max-width: 968px) {
             .screenshots-grid {
-                grid-template-columns: repeat(2, 1fr);
+                flex-direction: column;
                 gap: 1.5rem;
+            }
+
+            .screenshot-item {
+                width: 200px;
             }
         }
 
