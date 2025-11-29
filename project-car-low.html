@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Low App - Umer Zafar Portfolio</title>
+    <link rel="stylesheet" href="css/modern-portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-detail-section {
+            padding: 120px 0 80px;
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(21, 27, 61, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: rgba(21, 27, 61, 1);
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .project-header h1 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(111, 239, 255, 0.1));
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+
+        .project-btn:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-overview {
+            background: rgba(21, 27, 61, 0.6);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-overview h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .project-overview p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-section {
+            margin-top: 3rem;
+        }
+
+        .features-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .features-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(0, 217, 255, 0.05);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-item strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .screenshots-section {
+            margin: 3rem 0;
+        }
+
+        .screenshots-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .screenshot-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            transition: var(--transition-base);
+            cursor: pointer;
+            max-height: 600px;
+        }
+
+        .screenshot-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .tech-stack-section {
+            background: rgba(21, 27, 61, 0.6);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tech-stack-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(0, 217, 255, 0.05);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: var(--transition-base);
+        }
+
+        .tech-item:hover {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .tech-item span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-overview,
+            .tech-stack-section {
+                padding: 2rem;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="section-container">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+
+            <div class="project-header">
+                <div class="project-tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Maps API</span>
+                </div>
+                <h1>Car Low App</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Completed: 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Personal Project</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Duration: 1 month</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/umer-zafr/car-app" target="_blank" class="project-btn">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <!-- Project Overview -->
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>
+                        Car Low App is a comprehensive car rental and management application built with Flutter. 
+                        The app provides users with a seamless experience to browse, book, and manage car rentals 
+                        with real-time location tracking and payment integration.
+                    </p>
+                    <p>
+                        The application leverages Firebase for backend services including authentication, real-time database, 
+                        and cloud storage. It integrates Google Maps API for location services, enabling users to find nearby 
+                        cars and track their rentals in real-time.
+                    </p>
+
+                    <div class="features-section">
+                        <h3>Key Features</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Firebase Authentication</strong>
+                                    <p>Secure user login and registration with Firebase</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Car Browsing & Search</strong>
+                                    <p>Browse available cars with advanced filters and search</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Real-time Location Tracking</strong>
+                                    <p>Track car locations and navigate using Google Maps</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Booking Management</strong>
+                                    <p>Easy booking process with calendar integration</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Payment Integration</strong>
+                                    <p>Secure payment processing for rentals</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>User Profiles</strong>
+                                    <p>Manage user profiles and rental history</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="tech-stack-section">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" style="width: 2.5rem; height: 2.5rem;">
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" style="width: 2.5rem; height: 2.5rem;">
+                            <span>Firebase</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" style="width: 2.5rem; height: 2.5rem;">
+                            <span>Dart</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-map-marked-alt" style="font-size: 2.5rem; color: var(--primary);"></i>
+                            <span>Google Maps API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
