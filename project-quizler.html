@@ -19,9 +19,9 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.8rem 1.5rem;
-            background: rgba(21, 27, 61, 0.8);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            border-radius: var(--radius-md);
+            background: transparent;
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            border-radius: 8px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
@@ -30,73 +30,81 @@
         }
 
         .back-button:hover {
-            background: rgba(21, 27, 61, 1);
+            background: rgba(0, 217, 255, 0.1);
             border-color: var(--primary);
             transform: translateX(-5px);
         }
 
         .project-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .project-header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--text-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .project-meta {
+        .status-badges {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        .meta-item i {
-            color: var(--primary);
-        }
-
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
 
-        .tag {
-            padding: 0.5rem 1rem;
-            background: rgba(0, 217, 255, 0.1);
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .status-badge i {
+            color: var(--primary);
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: transparent;
             border: 1px solid rgba(0, 217, 255, 0.3);
-            border-radius: var(--radius-md);
+            border-radius: 6px;
             color: var(--primary);
             font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .filter-btn:hover {
+            background: rgba(0, 217, 255, 0.1);
+            border-color: var(--primary);
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .project-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(111, 239, 255, 0.1));
+            padding: 0.9rem 1.8rem;
+            background: transparent;
             border: 2px solid var(--primary);
-            border-radius: var(--radius-md);
+            border-radius: 8px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
@@ -283,51 +291,48 @@
 
             <div class="project-header">
                 <h1>Quizler App</h1>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>2024</span>
+                
+                <div class="status-badges">
+                    <div class="status-badge">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Completed 2024</span>
                     </div>
-                    <div class="meta-item">
-                        <i class="fas fa-code"></i>
-                        <span>Flutter | Dart</span>
+                    <div class="status-badge">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Personal Project</span>
                     </div>
-                    <div class="meta-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Mobile App</span>
+                    <div class="status-badge">
+                        <i class="fas fa-users"></i>
+                        <span>Duration: 4 weeks</span>
                     </div>
                 </div>
 
-                <div class="project-tags">
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Dart</span>
-                    <span class="tag">Quiz API</span>
-                    <span class="tag">Material Design</span>
-                    <span class="tag">State Management</span>
+                <div class="project-filters">
+                    <button class="filter-btn">Flutter</button>
+                    <button class="filter-btn">Dart</button>
+                    <button class="filter-btn">Material Design</button>
                 </div>
 
                 <div class="project-links">
                     <a href="https://github.com/umer-zafr/quizler-app" target="_blank" class="project-btn">
                         <i class="fab fa-github"></i>
-                        View Code
+                        View on Github
                     </a>
                 </div>
             </div>
 
             <!-- Project Overview -->
             <div class="content-section">
-                <h2 class="section-title">
-                    <i class="fas fa-info-circle"></i>
-                    Project Overview
-                </h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem;">
-                    Quizler App is an interactive quiz application built with Flutter that challenges users with engaging
-                    questions across multiple categories. The app features a clean, intuitive interface with real-time 
-                    score tracking, making learning fun and competitive. Perfect for testing knowledge and improving 
-                    retention through gamified learning.
+                <h2 class="section-title">Project Overview</h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem;">
+                    A simple yet elegant BMI (Body Mass Index) Calculator built with Flutter. This app helps users calculate their BMI based on height and weight inputs, providing instant feedback on their body mass index category (Underweight, Normal weight, Overweight, or Obese).
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                    The application provides gender selection, height adjustment via slider, and weight/age selection, displaying real-time BMI calculation with meaningful feedback. Results are displayed with color-coded categories to help users understand their BMI status instantly.
                 </p>
 
                 <!-- Key Features Grid -->
+                <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1.5rem;">Key Features</h3>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -373,18 +378,15 @@
                         <div class="feature-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Responsive Design</h3>
-                        <p>Optimized UI for seamless experience across all devices</p>
+                        <h3>Clean User UI</h3>
+                        <p>Modern dark theme with smooth animations</p>
                     </div>
                 </div>
             </div>
 
             <!-- Screenshots Section -->
             <div class="content-section screenshots-section">
-                <h2 class="section-title">
-                    <i class="fas fa-images"></i>
-                    App Screenshots
-                </h2>
+                <h2 class="section-title">App Screenshots</h2>
                 <div class="screenshots-grid">
                     <div class="screenshot-item">
                         <img src="images/q11.png" alt="Quizler Screenshot 1">
@@ -400,10 +402,7 @@
 
             <!-- Tech Stack -->
             <div class="content-section">
-                <h2 class="section-title">
-                    <i class="fas fa-layer-group"></i>
-                    Tech Stack
-                </h2>
+                <h2 class="section-title">Technologies Used</h2>
                 <div class="tech-stack">
                     <div class="tech-item">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" style="width: 24px; height: 24px;">
@@ -416,18 +415,6 @@
                     <div class="tech-item">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material Design" style="width: 24px; height: 24px;">
                         <span>Material Design</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-server"></i>
-                        <span>REST API</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Provider</span>
-                    </div>
-                    <div class="tech-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" style="width: 24px; height: 24px;">
-                        <span>Firebase</span>
                     </div>
                 </div>
             </div>
