@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management App - Umer Zafar Portfolio</title>
+    <title>BMI Calculator - Umer Zafar Portfolio</title>
     <link rel="stylesheet" href="css/modern-portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -176,6 +176,51 @@
             margin: 0;
         }
 
+        .screenshots-section {
+            margin: 3rem 0;
+        }
+
+        .screenshots-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .screenshots-grid {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+
+        .screenshot-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            transition: var(--transition-base);
+            cursor: pointer;
+            width: 220px;
+            flex: 0 0 auto;
+        }
+
+        .screenshot-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            background: #000;
+        }
+
         .tech-stack-section {
             background: rgba(21, 27, 61, 0.6);
             border: 1px solid rgba(0, 217, 255, 0.2);
@@ -250,10 +295,10 @@
             <div class="project-header">
                 <div class="project-tags">
                     <span class="tag">Flutter</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">Provider</span>
+                    <span class="tag">Dart</span>
+                    <span class="tag">Material Design</span>
                 </div>
-                <h1>Task Management App</h1>
+                <h1>BMI Calculator</h1>
                 <div class="project-meta">
                     <div class="meta-item">
                         <i class="fas fa-calendar"></i>
@@ -269,7 +314,7 @@
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/umer-zafr/task-manager" target="_blank" class="project-btn">
+                    <a href="https://github.com/umer-zafr/bmi-calculator" target="_blank" class="project-btn">
                         <i class="fab fa-github"></i>
                         View on GitHub
                     </a>
@@ -281,16 +326,16 @@
                 <div class="project-overview">
                     <h2>Project Overview</h2>
                     <p>
-                        A comprehensive task management application built with Flutter that helps users organize their
-                        daily tasks,
-                        set priorities, and track progress. The app features a clean, intuitive interface with real-time
-                        synchronization across devices.
+                        A simple yet elegant BMI (Body Mass Index) Calculator built with Flutter. The app helps users
+                        calculate their BMI based on height and weight inputs, providing instant results with health
+                        status indicators. The interface features a modern dark theme with intuitive controls and
+                        clear visual feedback.
                     </p>
                     <p>
-                        The application uses Firebase for backend services including authentication, real-time database,
-                        and cloud storage. State management is handled using Provider pattern, ensuring smooth
-                        performance
-                        and efficient data flow throughout the application.
+                        The application provides gender selection, height adjustment via slider, and weight/age
+                        selection with increment/decrement buttons. Results are displayed with color-coded health
+                        status (Normal, Underweight, Overweight) making it easy for users to understand their BMI
+                        category at a glance.
                     </p>
 
                     <div class="features-section">
@@ -299,45 +344,58 @@
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Firebase Authentication</strong>
-                                    <p>Secure user login and registration with Firebase</p>
+                                    <strong>Gender Selection</strong>
+                                    <p>Choose between Male and Female options</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Task Creation & Management</strong>
-                                    <p>Create, edit, and delete tasks with ease</p>
+                                    <strong>Height Slider</strong>
+                                    <p>Smooth slider control for height input in centimeters</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Priority Levels</strong>
-                                    <p>Set priority levels for tasks (High, Medium, Low)</p>
+                                    <strong>Weight & Age Controls</strong>
+                                    <p>Easy increment/decrement buttons for precise input</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Real-time Sync</strong>
-                                    <p>Tasks sync in real-time across all devices</p>
+                                    <strong>Instant Calculation</strong>
+                                    <p>Calculate BMI with a single tap</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Categories & Tags</strong>
-                                    <p>Organize tasks using categories and tags</p>
+                                    <strong>Color-Coded Results</strong>
+                                    <p>Visual feedback with Normal, Underweight, Overweight indicators</p>
                                 </div>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <strong>Progress Tracking</strong>
-                                    <p>Track completion status and view statistics</p>
+                                    <strong>Clean Dark UI</strong>
+                                    <p>Modern dark theme with smooth animations</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screenshots -->
+                <div class="screenshots-section">
+                    <h3>App Screenshots</h3>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/bmi1.png" alt="BMI Calculator Main Screen">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/bmi1.png" alt="BMI Calculator Result">
                         </div>
                     </div>
                 </div>
@@ -352,18 +410,13 @@
                             <span>Flutter</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                                alt="Firebase" style="width: 2.5rem; height: 2.5rem;">
-                            <span>Firebase</span>
-                        </div>
-                        <div class="tech-item">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
                                 alt="Dart" style="width: 2.5rem; height: 2.5rem;">
                             <span>Dart</span>
                         </div>
                         <div class="tech-item">
-                            <i class="fas fa-box" style="font-size: 2.5rem; color: var(--primary);"></i>
-                            <span>Provider</span>
+                            <i class="fas fa-palette" style="font-size: 2.5rem; color: var(--primary);"></i>
+                            <span>Material Design</span>
                         </div>
                     </div>
                 </div>
